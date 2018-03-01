@@ -1,13 +1,12 @@
 
 The goal of the project was to set up and configure a Linux server to host an app that I had made. To do this an instance of an Ubuntu system was created using Amazon's Lightsail service. Once the Linux server was created, it was then configured to serve a Python app that used the Flask framework.
 
-i. The public IP address for my lightsail instance is 54.149.255.186. SSH is set up to use port 2200.
+i. The public IP address for my lightsail instance is 54.245.49.118. SSH is set up to use port 2200.
 
 ii. A Domain has not been registered, so the complete URL to my hosted web app is simply the public IP as stated in the previous point.
 
 
 iii. Software installed:
-        -PuTTYgen was installed on my local machine to generate key pairs for ssh login.
         -To run the app Nginx, Gunicorn, PostgreSQL, Python and Flask were used on an Ubuntu operating system.
         -For a web server Nginx was chosen and installed.
         -Gunicorn was used in conjunction with Nginx to provide the ability to handle larger traffic loads than a Flask app can handle on it's own. PostgreSQL was the database used for this app. After postgreSQGL installation, the users and a database were created. SQLite was used during development, so a few modifications to the app and its setup files were necessary to allow for a connection to a PostgreSQL database rather than an SQLite database.
@@ -20,7 +19,8 @@ iii. Software installed:
         -Create users and grant sudo power:
             sudo adduser <user>
             sudo usermod -aG sudo <user>
-        -Create .ssh/authorized_keys file and paste in the corresponding public key for each user.
+        -Create .ssh/authorized_keys file and paste in the corresponding public key for each user. Key pairs generated locally
+            ssh-keygen
         -Configure and enable firewall:
             sudo ufw default deny incoming
             sudo ufw default allow outgoing
